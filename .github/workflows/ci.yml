@@ -44,9 +44,7 @@ jobs:
 
   testdata:
     name: Verify testdata directory
-    needs:
-      - lint
-      - go-apidiff
+    needs: lint
     runs-on: ubuntu-latest
     # Pull requests from the same repository won't trigger this checks as they were already triggered by the push
     if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
@@ -66,9 +64,7 @@ jobs:
 
   test:
     name: Test for ${{ matrix.os }}
-    needs:
-      - lint
-      - go-apidiff
+    needs: lint
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -93,7 +89,6 @@ jobs:
     name: Code coverage
     needs:
       - lint
-      - go-apidiff
       - testdata
       - test
     runs-on: ubuntu-latest
