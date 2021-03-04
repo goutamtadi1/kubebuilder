@@ -86,7 +86,7 @@ golangci-lint:
 	}
 
 .PHONY: apidiff
-apidiff: go-apidiff
+apidiff: go-apidiff ## Run the go-apidiff to verify any API differences compared with origin/master
 	$(GO_APIDIFF) origin/master --compare-imports --print-compatible --repo-path=.
 
 GO_APIDIFF = $(shell pwd)/bin/go-apidiff
