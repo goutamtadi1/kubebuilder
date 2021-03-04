@@ -4,6 +4,7 @@ go 1.15
 
 require (
 	github.com/gobuffalo/flect v0.2.2
+	github.com/joelanford/go-apidiff v0.1.0
 	github.com/onsi/ginkgo v1.15.0
 	github.com/onsi/gomega v1.10.5
 	github.com/spf13/afero v1.2.2
